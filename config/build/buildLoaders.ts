@@ -39,6 +39,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
   const cssLoaderWithModules = {
     loader: 'css-loader',
     options: {
+      url: false,
       modules: {
         localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]',
       },

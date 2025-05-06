@@ -1,0 +1,105 @@
+@use '@/assets/styles/variables' as *;
+
+.headerContainer {
+  max-width: 1180px;
+  display: flex;
+  align-items: center;
+  padding: 24px 42px;
+}
+
+.searchWrapper {
+  position: relative;
+  margin-right: 32px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 18px;
+    right: 25px;
+    width: 18px;
+    height: 18px;
+    background-image: url('/icons/search.svg');
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+}
+
+
+.searchInput {
+  width: 400px;
+  height: 50px;
+  border-radius: 16px;
+  background: $grey-darker-color;
+  font-size: 14px;
+  line-height: 157%;
+  color: $grey-blue-color;
+  border: none;
+  padding: 14px 24px;
+  padding-right: 42px;
+}
+
+.profileContainer {
+  max-width: 295px;
+  display: flex;
+  align-items: center;
+}
+
+.profileFavorites {
+  margin-right: 32px;
+}
+
+.profileNotification,
+.profileFavorites {
+  cursor: pointer;
+}
+
+.profileFavorites,
+.profileNotification {
+  color: $grey-vector-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.profileNotification {
+  margin-right: 42px;
+
+}
+
+.profileWrapper {
+  width: 177px;
+  display: flex;
+  align-items: center;
+}
+
+.profileImage {
+  border-radius: 100%;
+  fill: #e5e5e5;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.profileName {
+  position: relative;
+  font-weight: 600;
+  color: $dark-grey-color;
+  margin: 0;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 2px;
+    right: -24px;
+    width: 11px;
+    height: 11px;
+    border-top: 2px solid $grey-vector-color;
+    border-left: 2px solid $grey-vector-color;
+    transform: rotate(222deg);
+  }
+}
