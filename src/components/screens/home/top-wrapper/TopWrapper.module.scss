@@ -1,0 +1,28 @@
+@use '@/assets/styles/variables' as *;
+
+.topWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  color: $dark-grey-color;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 122%;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.moreText {
+  font-size: 14px;
+  line-height: 157%;
+  color: $grey-blue-color;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

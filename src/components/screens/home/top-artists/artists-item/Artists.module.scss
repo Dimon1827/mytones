@@ -1,0 +1,48 @@
+@use '@/assets/styles/variables' as *;
+
+.artists {
+  padding: 32px 24px;
+  background-color: $white-color;
+  border-radius: 24px;
+  width: 724px;
+  margin-left: 32px;
+  margin-bottom: 24px;
+}
+
+.artistsList {
+  display: grid;
+  grid-template-columns: repeat(6, 95px);
+  column-gap: 24px;
+}
+
+.artistItem {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.artistImage {
+  border-radius: 20px;
+  display: block;
+  margin-bottom: 6px;
+  background-size: contain;
+}
+
+.artistLink {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 157%;
+  text-align: center;
+  color: $dark-grey-color;
+  margin-bottom: 2px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.text {
+  font-size: 13px;
+  margin: 0;
+}

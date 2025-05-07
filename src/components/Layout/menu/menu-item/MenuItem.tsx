@@ -1,14 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import * as styles from '../Menu.module.scss';
+import IListItem from '@/types/listItem';
 
-interface IMenuItem {
-  key: number;
-  to: string;
-  children: string;
-}
 
-const MenuItem = ({ children, to, key }: IMenuItem) => {
+const MenuItem = ({ children, to, key }: IListItem) => {
   return (
     <li className={styles.menuItem} key={key}>
       <NavLink className={styles.menuLink} to={to}>

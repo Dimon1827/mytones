@@ -1,0 +1,28 @@
+@use '@/assets/styles/variables' as *;
+
+.dots {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 122px;
+  margin-top: 25px;
+}
+
+.dot {
+  padding: 0;
+  border-radius: 12px;
+  width: 6px;
+  height: 6px;
+  background: $darker-white-color;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.active {
+  height: 42px;
+  background-color: $primary-color;
+}

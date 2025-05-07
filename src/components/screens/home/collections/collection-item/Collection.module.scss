@@ -1,0 +1,52 @@
+@use '@/assets/styles/variables' as *;
+
+.collections {
+  border-radius: 20px;
+  padding: 24px;
+  width: 354px;
+  background-color: $white-color;
+  margin-left: 32px;
+}
+
+.collectionList {
+  display: grid;
+  grid-template-columns: repeat(3, 94px);
+  gap: 12px;
+}
+
+.collectionImage {
+  display: block;
+  border-radius: 16px;
+}
+
+.collectionLink {
+  position: relative;
+  cursor: default;
+}
+
+.button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  width: 24px;
+  height: 24px;
+  backdrop-filter: blur(4px);
+  background: rgba(249, 249, 251, 0.4);
+
+  &::after {
+    position: absolute;
+    content: '';
+    right: -1px;
+    bottom: 6px;
+    border: 6px solid transparent;
+    border-left: 10px solid $white-color;
+  }
+
+  &:hover {
+    background: $primary-color;
+    transition: all 0.5s;
+  }
+}

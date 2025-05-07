@@ -1,0 +1,72 @@
+@use '@/assets/styles/variables' as *;
+
+.genre {
+  padding: 24px;
+  border-radius: 20px;
+  width: 354px;
+  background-color: $white-color;
+}
+
+.genreList {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.genreItem {
+  margin: 0;
+}
+
+.genreLink {
+  display: block;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 147%;
+  text-align: center;
+  color: $white-color;
+  background-color: $primary-color;
+  border-radius: 10px;
+  padding: 12px 8px;
+  transition: all 0.5s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.genreItem:nth-of-type(1) .genreLink {
+  background-color: $light-pink-color;
+}
+
+.genreItem:nth-of-type(2) .genreLink {
+  background-color: $light-blue-color;
+}
+
+.genreItem:nth-of-type(3) .genreLink {
+  background-color: $lilac-color;
+}
+
+.genreItem:nth-of-type(4) .genreLink {
+  background-color: $light-orange-color;
+}
+
+.genreItem:nth-of-type(5) .genreLink {
+  background-color: $light-yellow-green-color;
+}
+
+.genreItem:nth-of-type(6) .genreLink {
+  background-color: $light-purple-color;
+}
+
+.genreItem:nth-of-type(7) .genreLink {
+  background-color: $light-red-color;
+}
+
+.genreItem:nth-of-type(8) .genreLink {
+  background-color: $medium-grey-color;
+}
+
+.genreItem:nth-of-type(9) .genreLink {
+  background-color: $light-green-color;
+}
