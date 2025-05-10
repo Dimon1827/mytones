@@ -1,0 +1,89 @@
+@use '@/assets/styles/variables' as *;
+
+.RightSidebar {
+  position: absolute;
+  width: 392px;
+  border-radius: 24px 0 0 0;
+  background-color: $white-color;
+  padding-top: 32px;
+  right: -12px;
+  top: 94px;
+}
+
+.WeeklyWrapper {
+  padding-left: 24px;
+  padding-right: 42px;
+}
+
+.WeeklyList {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: -25px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $lighest-grey-color;
+  }
+
+  &:hover:after {
+    opacity: 0.8;
+  }
+}
+
+.weeklyItem {
+  width: 328px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.number {
+  font-size: 18px;
+  line-height: 122%;
+  text-transform: uppercase;
+  color: $grey-blue-color;
+}
+
+.image {
+  border-radius: 10px;
+}
+
+.textWrapper {
+  width: 157px;
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 137%;
+  color: $dark-grey-color;
+  margin-bottom: 2px;
+}
+
+.text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 13px;
+  color: $light-grey-color;
+}
+
+.time {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 157%;
+  color: $dark-grey-color;
+}
+
+.settings {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

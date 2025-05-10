@@ -1,0 +1,183 @@
+@use '@/assets/styles/variables' as *;
+
+.player {
+  padding: 48px 66px 26px 48px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 122%;
+  text-transform: uppercase;
+  color: $dark-grey-color;
+}
+
+.image {
+  border-radius: 18px;
+  margin-bottom: 11px;
+}
+
+.sliderWrapper {
+  background-color: rgba(180, 180, 248, 0.3);
+  width: 278px;
+  height: 3px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.slider {
+  position: relative;
+  background-color: $primary-color;
+  width: 166px;
+  opacity: 1;
+  height: 3px;
+  border-radius: 10px;
+
+  &::after {
+    cursor: pointer;
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: $primary-color;
+    border-radius: 20px;
+    right: -2px;
+    top: -5px;
+  }
+}
+
+.subtitle {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 92%;
+  color: $dark-grey-color;
+  margin-bottom: 11px;
+}
+
+.artist {
+  font-weight: 400;
+  font-size: 16px;
+  color: $light-grey-color;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.timeWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.currentTime {
+  font-weight: 400;
+  font-size: 14px;
+  color: $primary-color;
+}
+
+.allTime {
+  font-size: 14px;
+  color: $grey-blue-color;
+  margin-bottom: 15px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.shuffle,
+.previous,
+.play,
+.next,
+.repeat {
+  border: none;
+  background-color: transparent;
+}
+
+.play {
+  &:hover {
+    background-color: $darker-primary-color;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.play {
+  width: 42px;
+  height: 42px;
+  background-color: $primary-color;
+  border-radius: 20px;
+}
+
+.shuffleImage {
+  width: 18px;
+  height: 18px;
+  opacity: 0.3;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+
+.playImage {
+  color: $white-color;
+  width: 16px;
+  height: 16px;
+}
+
+.previousImage,
+.nextImage {
+  color: $primary-color;
+  width: 13px;
+  height: 18px;
+}
+
+.repeatImage {
+  width: 16px;
+  height: 18px;
+  opacity: 0.3;
+  &:hover {
+    color: $primary-color
+  }
+}
+
+.previousImage,
+.nextImage {
+  &:hover {
+    color: $darker-primary-color;
+  }
+}
+
+
+
+.text {
+  margin: 0;
+  position: relative;
+  font-weight: 600;
+  font-size: 14px;
+  color: $grey-blue-color;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -16px;
+    left: 133px;
+    right: 0;
+    width: 11px;
+    height: 11px;
+    border-top: 2px solid #B3B3BC;
+    border-left: 2px solid #B3B3BC;
+    transform: rotate(44deg);
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

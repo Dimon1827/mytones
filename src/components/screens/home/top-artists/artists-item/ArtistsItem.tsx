@@ -8,9 +8,9 @@ interface IArtistItem extends IListItem {
   plays: string;
 }
 
-const ArtistsItem = ({ key, to, children, image, plays }: IArtistItem) => {
+const ArtistsItem = ({  to, children, image, plays }: IArtistItem) => {
   return (
-    <li className={styles.artistItem} key={key}>
+    <li className={styles.artistItem}>
       <img
         className={styles.artistImage}
         src={image}

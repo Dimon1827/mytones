@@ -36,6 +36,15 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 
   // options.icon = true позволяет работать с svg именно как с иконками и удобно менять им размеры
 
+  const cssLoader = {
+    loader: 'css-loader',
+    options: {
+      url: false, // Отключаем обработку URL в обычном CSS (если она не нужна)
+      modules: false, // Важно: Отключаем CSS Modules для обычного CSS
+    },
+  };
+  
+  
   const cssLoaderWithModules = {
     loader: 'css-loader',
     options: {
@@ -54,6 +63,15 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
       'sass-loader',
     ],
   };
+
+  const cssLoaderRule = {
+    test: /\.css$/i,
+    use: [
+      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      cssLoader, // Используем cssLoader без modules
+    ],
+  };
+  
 
   const tsLoader = {
     // ts-loader умеет работать с jsx
@@ -87,6 +105,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     // Порядок важен
     assetLoader,
     scssLoader,
+    cssLoaderRule,
     tsLoader,
     esbuildLoader,
     svgrLoader,

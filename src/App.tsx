@@ -5,6 +5,7 @@ import './App.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Home from './components/screens/home/Home';
+import Explorer from './components/screens/explorer/Explorer';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path='/explorer' element={<Explorer />} />
         </Route>
       </Routes>
     </BrowserRouter>

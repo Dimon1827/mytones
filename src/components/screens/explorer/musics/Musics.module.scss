@@ -1,0 +1,61 @@
+@use '@/assets/styles/variables' as *;
+
+.topWrapperText {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 122%;
+  color: $light-grey-color;
+}
+
+.topWrapperTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.topWrapperAll {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 157%;
+  text-align: right;
+  color: $primary-color;
+  cursor: pointer;
+
+  &:hover {
+    color: $darker-primary-color
+  }
+}
+
+.sliderElement {
+  cursor: pointer;
+}
+
+.newMusic {
+  border-radius: 20px;
+  background-color: $white-color;
+  padding: 25px 35px 24px 35px;
+  width: 745px;
+  margin-bottom: 16px;
+}
+
+.sliderImage {
+  border-radius: 20px;
+  margin-bottom: 9px;
+}
+
+.subtitle {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 122%;
+  color: $light-grey-color;
+}
+
+.text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 157%;
+  color: $light-grey-color;
+}

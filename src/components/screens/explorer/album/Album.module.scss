@@ -1,0 +1,63 @@
+@use '@/assets/styles/variables' as *;
+
+.topWrapperText {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 122%;
+  color: $light-grey-color;
+}
+
+.topWrapperTitle {
+  display: flex;
+  justify-content: space-between;
+  width: 689px;
+}
+
+.topWrapperAll {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 157%;
+  text-align: right;
+  color: $primary-color;
+  cursor: pointer;
+
+  &:hover {
+    color: $darker-primary-color;
+  }
+
+}
+
+
+.albumWrapper {
+  margin-left: 24px;
+  margin-bottom: 31px;
+}
+.slider {
+  color: $white-color;
+  position: relative;
+}
+
+.sliderImage {
+  border-radius: 10px;
+}
+
+.textWrapper {
+  position: absolute;
+  bottom: 14px;
+  left: 23px;
+  width: 95%;
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 122%;
+}
+
+.text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 157%;
+}

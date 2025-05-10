@@ -1,0 +1,20 @@
+@use '@/assets/styles/variables' as *;
+
+.explorer {
+  padding-left: 24px;
+}
+
+.sliderWrapper {
+  max-width: 1040px;
+  overflow-x: hidden;
+}
+
+.mainTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 92%;
+  color: $primary-color;
+  margin: 0;
+  margin-bottom: 75px;
+  margin-left: 18px;
+}

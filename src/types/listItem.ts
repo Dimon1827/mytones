@@ -1,5 +1,5 @@
 interface IListItem {
-  key: number;
+  index?: number;
   to: string;
   children: string;
 };

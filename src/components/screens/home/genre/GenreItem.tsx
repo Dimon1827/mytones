@@ -3,9 +3,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import * as styles from './Genre.module.scss';
 
-const GenreItem = ({ key, to, children }: IListItem) => {
+const GenreItem = ({ to, children }: IListItem) => {
   return (
-    <li className={styles.genreItem} key={key}>
+    <li className={styles.genreItem}>
       <NavLink className={styles.genreLink} to={to}>
         {children}
       </NavLink>

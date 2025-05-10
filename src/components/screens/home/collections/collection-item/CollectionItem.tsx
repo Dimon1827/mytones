@@ -7,9 +7,9 @@ interface ICollectionItem extends IListItem {
   image: string;
 }
 
-const CollectionItem = ({ key, to, children, image }: ICollectionItem) => {
+const CollectionItem = ({ to, children, image }: ICollectionItem) => {
   return (
-    <li key={key}>
+    <li>
       <NavLink className={styles.collectionLink} to={to}>
         <img
           className={styles.collectionImage}
