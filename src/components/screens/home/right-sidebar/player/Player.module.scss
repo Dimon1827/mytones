@@ -30,24 +30,14 @@
 
 .slider {
   position: relative;
-  background-color: $primary-color;
-  width: 166px;
-  opacity: 1;
+  accent-color: $primary-color;
+  width: 278px;
   height: 3px;
   border-radius: 10px;
-
-  &::after {
-    cursor: pointer;
-    position: absolute;
-    content: "";
-    width: 12px;
-    height: 12px;
-    background-color: $primary-color;
-    border-radius: 20px;
-    right: -2px;
-    top: -5px;
-  }
+  cursor: pointer;
 }
+
+
 
 .subtitle {
   margin: 0;
@@ -98,11 +88,6 @@
   background-color: transparent;
 }
 
-.play {
-  &:hover {
-    background-color: $darker-primary-color;
-  }
-}
 
 button {
   cursor: pointer;
@@ -113,12 +98,18 @@ button {
   height: 42px;
   background-color: $primary-color;
   border-radius: 20px;
+  position: relative;
+
+  &:hover {
+    background-color: $darker-primary-color;
+  }
 }
 
 .shuffleImage {
   width: 18px;
   height: 18px;
   opacity: 0.3;
+
   &:hover {
     color: $primary-color;
   }
@@ -131,26 +122,59 @@ button {
   height: 16px;
 }
 
+.playButton {
+  position: absolute;
+  content: "";
+  right: 0px;
+  bottom: 12px;
+  border: 10px solid transparent;
+  border-left: 17px solid #FFFFFF;
+}
+
+.stopButton {
+  position: absolute;
+  top: 13px;
+  left: 2px;
+  display: inline-block;
+  width: 18px;
+  height: 6px;
+  background-color: $white-color;
+  margin: 5px;
+  transform: rotate(90deg);
+}
+
+.stopButton::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  top: -10px;
+  left: 0;
+}
+
 .previousImage,
 .nextImage {
   color: $primary-color;
   width: 13px;
   height: 18px;
+
+  &:hover {
+    color: $darker-primary-color;
+  }
+}
+
+.repeat.active .repeatImage {
+  color: $primary-color;
 }
 
 .repeatImage {
   width: 16px;
   height: 18px;
-  opacity: 0.3;
+  color : rgba(67, 67, 239, 0.3);
+
   &:hover {
     color: $primary-color
-  }
-}
-
-.previousImage,
-.nextImage {
-  &:hover {
-    color: $darker-primary-color;
   }
 }
 

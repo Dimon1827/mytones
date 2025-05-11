@@ -3,25 +3,29 @@ const weeklySong = [
     name: 'Anyone',
     image: '/images/songs/anyoneBieber.jpg',
     artist: 'Justin Bieber',
-    time: '03:11',
+    songSrc: '/songs/Justin_Bieber-Anyone.mp3',
+    time: '04:08',
+  },
+  {
+    name: 'Dynamite',
+    image: '/images/songs/dynamiteBTS.jpg',
+    songSrc: '/songs/BTS-Dynamite.mp3',
+    artist: 'BTS',
+    time: '02:45',
   },
   {
     name: 'What Other Peop...',
     image: '/images/songs/songLovato.jpg',
     artist: 'Demi Lovato',
-    time: '03:47',
-  },
-  {
-    name: 'Dynamite',
-    image: '/images/songs/dynamiteBTS.jpg',
-    artist: 'BTS',
-    time: '04:15',
+    songSrc: '/songs/Demi_Lovato-What_Other_People_Say.mp3',
+    time: '01:53',
   },
   {
     name: 'Selfish Love',
     image: '/images/songs/loveGomez.jpg',
+    songSrc: '/songs/Selena_Gomez-Selfish_Love.mp3',
     artist: 'Selena Gomez',
-    time: '03:31',
+    time: '02:07',
   },
 ];
 
