@@ -2,18 +2,26 @@ import React from 'react';
 import * as styles from './Weekly.module.scss';
 import weeklySong from './weeklySongData';
 import WeeklySongItem from './WeeklySongItem';
+import { ISong } from '@/types';
 
-const WeeklySong = () => {
+interface IWeeklySongProps {
+  playlist: ISong[];
+  onSongClick: (index: number) => void;
+}
+
+
+const WeeklySong = ({ playlist, onSongClick }: IWeeklySongProps) => {
   return (
     <ul className={styles.WeeklyList}>
-      {weeklySong.map((item, index) => {
+      {playlist.map((item, index) => {
         return (
           <WeeklySongItem
             key={index}
             image={item.image}
             artist={item.artist}
-            time={item.time}
             index={index}
+            time = {item.time}
+            onSongClick={onSongClick}
           >
             {item.name}
           </WeeklySongItem>

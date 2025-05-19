@@ -1,17 +1,28 @@
-import IListItem from '@/types/listItem';
+import { IListItem, ISong } from '@/types';
 import React from 'react';
 import * as styles from './Weekly.module.scss';
+import usePlaySong from '@/hooks/playSong';
 
 type IWeeklySongItem = Omit<IListItem, 'to'> & {
   artist: string;
-  time: string;
   image: string;
+  time: string
+  onSongClick: (index: number) => void;
 };
 
-const WeeklySongItem = ({ children, image, artist, time, index }: IWeeklySongItem) => {
+const WeeklySongItem = ({
+  children,
+  image,
+  artist,
+  index,
+  time,
+  onSongClick,
+}: IWeeklySongItem) => {
+  
+
   return (
-    <li className={styles.weeklyItem}>
-      <span className={styles.number}>0{index+1}</span>
+    <li className={styles.weeklyItem} onClick={() => onSongClick(index)}>
+      <span className={styles.number}>0{index + 1}</span>
       <img
         className={styles.image}
         src={image}
@@ -25,7 +36,7 @@ const WeeklySongItem = ({ children, image, artist, time, index }: IWeeklySongIte
       </div>
       <p className={styles.time}>{time}</p>
       <img
-      className={styles.settings}
+        className={styles.settings}
         src="/icons/ic-list.svg"
         alt="Больше настройков"
         width={18}

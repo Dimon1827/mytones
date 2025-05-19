@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Home from './components/screens/home/Home';
 import Explorer from './components/screens/explorer/Explorer';
+import MyMusic from './components/screens/my-music/MyMusic';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path='/explorer' element={<Explorer />} />
+          <Route path='/my-music' element={<MyMusic />} />
         </Route>
       </Routes>
     </BrowserRouter>

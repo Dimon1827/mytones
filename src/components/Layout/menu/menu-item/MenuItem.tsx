@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import * as styles from '../Menu.module.scss';
-import IListItem from '@/types/listItem';
-
+import { IListItem } from '@/types';
 
 const MenuItem = ({ children, to, index }: IListItem) => {
   return (

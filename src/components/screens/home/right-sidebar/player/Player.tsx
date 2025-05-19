@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useRef, useState } from 'react';
+import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import * as styles from './Player.module.scss';
 import Shuffle from '@/assets/icons/shuffle.svg';
 import Previous from '@/assets/icons/previous.svg';
@@ -6,77 +6,33 @@ import Play from '@/assets/icons/pause.svg';
 import Next from '@/assets/icons/next.svg';
 import Repeat from '@/assets/icons/repeat.svg';
 import weeklySong from '../weeklySongData';
+import usePlaySong from '@/hooks/playSong';
+import { ISong } from '@/types';
+import useRepeatSong from '@/hooks/repeatSong';
 
-const Player = () => {
-  const [currentMusicDetails, setCurrentMusicDetails] = useState({
-    name: 'Anyone',
-    image: '/images/songs/anyoneBieber.jpg',
-    artist: 'Justin Bieber',
-    songSrc: '/songs/AURORA - Runaway (Lyrics).mp3',
-  });
+interface IPlayerProps {
+  playlist: ISong[];
+  currentTrackIndex: number;
+}
 
+const Player = ({ playlist, currentTrackIndex }: IPlayerProps) => {
   const [audioProgress, setAudioProgress] = useState(0);
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [musicIndex, setMusicIndex] = useState(0);
   const [musicTotalLength, setMusicTotalLength] = useState('3:10');
   const [musicCurrentTime, setMusicCurrentTime] = useState('0:00');
-  const [isMusicRepeat, setIsMusicRepeat] = useState(false);
-
-  const currentAudio = useRef<HTMLAudioElement | null>(null);
+  const { isMusicRepeat, handleRepeatAudio } = useRepeatSong();
+  const {
+    currentMusicDetails,
+    isAudioPlaying,
+    currentAudio,
+    handleAudioPlay,
+    handlePreviousSong,
+    handleNextSong,
+  } = usePlaySong(playlist, currentTrackIndex);
 
   function handleMusicProgressBar(e: ChangeEvent<HTMLInputElement>) {
     setAudioProgress(Number(e.target.value));
     currentAudio.current.currentTime =
       (Number(e.target.value) * currentAudio.current.duration) / 100;
-  }
-
-  function handleAudioPlay() {
-    if (currentAudio.current.paused) {
-      currentAudio.current.play();
-      setIsAudioPlaying(true);
-    } else {
-      currentAudio.current.pause();
-      setIsAudioPlaying(false);
-    }
-  }
-
-  function handlePreviousSong() {
-    if (musicIndex === 0) {
-      let setNumber = weeklySong.length - 1;
-      setMusicIndex(setNumber);
-      updateCurrentMusicDetails(setNumber);
-    } else {
-      let setNumber = musicIndex - 1;
-      setMusicIndex(setNumber);
-      updateCurrentMusicDetails(setNumber);
-    }
-  }
-
-  function handleNextSong() {
-    if (musicIndex >= weeklySong.length - 1) {
-      let setNumber = 0;
-      setMusicIndex(setNumber);
-      updateCurrentMusicDetails(setNumber);
-    } else {
-      let setNumber = musicIndex + 1;
-      setMusicIndex(setNumber);
-      updateCurrentMusicDetails(setNumber);
-    }
-  }
-
-  function updateCurrentMusicDetails(number: number) {
-    let musicObject = weeklySong[number];
-    const newMusic = {
-      name: musicObject.name,
-      artist: musicObject.artist,
-      songSrc: musicObject.songSrc,
-      image: musicObject.image,
-    };
-
-    setCurrentMusicDetails(newMusic);
-    setIsAudioPlaying(true);
-    currentAudio.current.src = musicObject.songSrc;
-    currentAudio.current.play();
   }
 
   function handleAudioUpdate() {
@@ -98,14 +54,6 @@ const Player = () => {
     const progress =
       (currentAudio.current.currentTime / currentAudio.current.duration) * 100;
     setAudioProgress(isNaN(progress) ? 0 : progress);
-  }
-
-  function handleRepeatAudio() {
-    if (isMusicRepeat) {
-      setIsMusicRepeat(false);
-    } else {
-      setIsMusicRepeat(true);
-    }
   }
 
   return (

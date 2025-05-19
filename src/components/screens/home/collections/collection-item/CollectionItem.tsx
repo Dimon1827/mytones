@@ -1,4 +1,4 @@
-import IListItem from '@/types/listItem';
+import { IListItem } from '@/types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import * as styles from './Collection.module.scss';

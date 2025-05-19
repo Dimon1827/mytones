@@ -1,8 +1,7 @@
-import IListItem from '@/types/listItem';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import * as styles from './Artists.module.scss';
-
+import { IListItem } from '@/types';
 interface IArtistItem extends IListItem {
   image: string;
   plays: string;

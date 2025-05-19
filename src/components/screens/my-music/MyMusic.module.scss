@@ -1,0 +1,157 @@
+@use '@/assets/styles/variables' as *;
+
+
+.topWrapper {
+  margin-bottom: 35px;
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 92%;
+  color: $primary-color;
+  margin: 0;
+  margin-left: 23px;
+}
+
+.playButton {
+  border: 8px solid transparent;
+  border-left: 13px solid $primary-color;
+}
+
+.buttonsContainer,
+.buttonWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonsContainer {
+  width: 169px;
+}
+
+.buttonWrapper {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+
+.textButton {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 157%;
+  color: $primary-color;
+  margin: 0;
+}
+
+.myMusicContainer {
+  margin-left: 19px;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.shuffleImage {
+  color: $primary-color;
+  margin-right: 11px;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.myMusicList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.myMusicItem {
+  display: flex;
+  align-items: center;
+  background-color: $white-color;
+  border-radius: 16px;
+  width: 740px;
+  margin: 0;
+  padding: 17px 32px 19px 19px;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.textWrapper {
+  margin-right: auto;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 110%;
+  color: $dark-grey-color;
+  margin-bottom: 3px;
+}
+
+.time,
+.text {
+  font-weight: 500;
+  color: rgba(36, 36, 46, 0.5);
+}
+
+.text {
+  font-size: 13px;
+  line-height: 169%;
+}
+
+.triplet {
+  width: 4px;
+  height: 19px;
+}
+
+.time {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 122%;
+}
+
+.rightWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+}
+
+.favoriteImage.active {
+  color: $primary-color;
+  fill: $primary-color;
+}
+
+.favoriteImage { 
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.image {
+  width: 67px;
+  height: 67px;
+  border-radius: 10px;
+  margin-right: 25px;
+}
+
+.repeatImage {
+  color: rgba(67, 67, 239, 0.3);
+
+  &:hover {
+    color: $primary-color
+  }
+}
